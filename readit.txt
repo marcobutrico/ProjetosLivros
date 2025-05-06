@@ -1,0 +1,14 @@
+*** Desenvolvimento Backend
+- Lógica de programação
+   Leetcode
+   Hackerrank
+
+- Programação Orientada a Objetos (POO)
+- Banco de Dados Relacional (DDL e DML) -  SQL Server
+
+- APIs 
+ => CRUD (Database First ou Code First)
+
+- Autenticação e Autorização
+- Publicar API
+- Arquitetura em Camadas

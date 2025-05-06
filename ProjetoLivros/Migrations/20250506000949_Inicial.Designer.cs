@@ -12,7 +12,7 @@ using ProjetoLivros.Context;
 namespace ProjetoLivros.Migrations
 {
     [DbContext(typeof(LivrosContext))]
-    [Migration("20250501005342_Inicial")]
+    [Migration("20250506000949_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -41,7 +41,9 @@ namespace ProjetoLivros.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
@@ -63,7 +65,9 @@ namespace ProjetoLivros.Migrations
 
                     b.Property<string>("NomeCategoria")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("CategoriaId");
 
@@ -79,6 +83,8 @@ namespace ProjetoLivros.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LivroId"));
 
                     b.Property<int>("Autor")
+                        .HasMaxLength(200)
+                        .IsUnicode(false)
                         .HasColumnType("int");
 
                     b.Property<int>("CategoriaId")
@@ -88,11 +94,15 @@ namespace ProjetoLivros.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(200)");
 
                     b.HasKey("LivroId");
 
@@ -111,9 +121,14 @@ namespace ProjetoLivros.Migrations
 
                     b.Property<string>("DescricaoTipo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("TipoUsuarioId");
+
+                    b.HasIndex("DescricaoTipo")
+                        .IsUnique();
 
                     b.ToTable("TipoUsuario");
                 });
