@@ -4,27 +4,29 @@ namespace ProjetoLivros.Interface
 {
     public interface ICategoriaRepository
     {
+        //Assincrono - denominado de Tasks
+        //Com o objetivo de liberar o processamento em funcao da busca de dados 
 
         //Listar todas as Categorias
         //Get
-        List<Categoria> ListarTodos();
+        Task<List<Categoria>> ListarTodosAsync();
 
-        //Listar Categorias por Id
-        //GetById
-        Categoria BuscarPorId(int id);
+        //Metodo sincrono
+        List<Categoria> ListarTodos();
 
         //Criar categoria
         //Create
         void Cadastrar(Categoria categoria);
+        Categoria? Categoria { get; }       //se achar, retorna categoria, ou nulo se nao achar
 
         //U - Update por Id - Update {id} e o que vai ser atualizado
         //Recebe um Id e atualizada a categoria correspondente
-        void Atualizar(int id, Categoria categoria);
+        Categoria? Atualizar(int id, Categoria categoria);
 
         //CRUD
         //D - Deletar por Id - Delete {id} 
         //Recebe um Id e deleta a categoria correspondente
-        void Deletar(int id);
+        Categoria? Deletar(int id);
 
     }
 }

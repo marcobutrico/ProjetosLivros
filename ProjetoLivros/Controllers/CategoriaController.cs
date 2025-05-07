@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ProjetoLivros.Interface;
+using ProjetoLivros.Repositories;
 
 namespace ProjetoLivros.Controllers
 {
@@ -6,15 +9,23 @@ namespace ProjetoLivros.Controllers
     [ApiController]
     public class CategoriaController : ControllerBase
     {
+        //Injetar repository
+        private readonly ICategoriaRepository _repository;
 
-        private ICategoriaController _categoriaRepository;
 
-        public CategoriaController(ICategoriaController categoriaRepository)
+        public CategoriaController(ICategoriaRepository repository)
         {
-            _categoriaRepository = categoriaRepository;
+            _repository = repository;
         }
 
+        // GET
         [HttpGet]
+        public IActionResult ListarTodos()
+        {
+            var categorias = _repository.ListarTodos();
+            return Ok(categorias);
+        }
+
+
 
     }
-}

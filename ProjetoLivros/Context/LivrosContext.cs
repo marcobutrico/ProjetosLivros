@@ -17,7 +17,7 @@ namespace ProjetoLivros.Context
 
         public DbSet<Livro> Livro { get; set; }
 
-        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
 
 
         //ctor - Construtor

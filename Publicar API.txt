@@ -1,0 +1,12 @@
+O que é publicar a API - Dar um ponto de acesso a essa API para acesso global
+
+- Maiores provedores em nuvem do mundo AWS (Amazon), Azure (Microsoft) e Google Cloud
+
+Publicar a API na Azure (por estarmos trabalhando com C#)
+---------------------------------------------------------
+
+1) Acessar Azure for Students: https://azure.microsoft.com/en-us/free/students
+2) Verificar qual é sua senha: https://classroom.google.com/c/NzMzNjc0MTg1NDAx/m/Nzc4MTkzMjc0MzY1/details
+3) Fazer login e preencher os dados.
+
+4) Se náo conseguir fazer login buscar no Google Portal Azure

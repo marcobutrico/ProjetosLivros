@@ -3,46 +3,73 @@ using ProjetoLivros.Context;
 using ProjetoLivros.Interface;
 using ProjetoLivros.Models;
 
-namespace ProjetoLivros.Repository
+namespace ProjetoLivros.Repositories
 {
+    //1 - herdar e implementar
+    //2 - injetar contexto
     public class CategoriaRepository : ICategoriaRepository
     {
+        //injecao de contexto
+        // -------------
 
-        private readonly LivrosContext _context;
+        private LivrosContext _context;
 
         public CategoriaRepository(LivrosContext context)
         {
             _context = context;
         }
 
-        public void Atualizar(int id, Categoria categoria)
+        public Categoria? Categoria => throw new NotImplementedException();
+
+        public Categoria? Atualizar(int id, Categoria categoria)
         {
-            throw new NotImplementedException();
+            //1 - Procuro que quero apagar
+            var categoriaEncontrada = _context.Categorias.FirstOrDefault(c => c.CategoriaId == id);
+            //2 - Se nao achei, retorno nulo
+            if (categoriaEncontrada == null) return null;
+            //3 Se achei, apago
+            categoriaEncontrada.NomeCategoria = categoria.NomeCategoria;
+            _context.SaveChanges();
+
+            return categoria;
         }
 
-        public Categoria BuscarPorId(int id)
+        public Categoria? Cadastrar(Categoria categoria)
         {
-            throw new NotImplementedException();
+            _context.Categorias.Add(categoria);
+            _context.SaveChanges();
         }
 
-        public void Cadastrar(Categoria categoria)
+        public Categoria? Deletar(int id)
         {
-            throw new NotImplementedException();
+            //1 - Procuro que quero apagar
+            var categoria = _context.Categorias.Find(id);
+            //2 - Se nao achei, retorno nulo
+            if (categoria == null) return null;
+            //3 Se achei, apago
+            _context.Categorias.Remove(categoria);
+            _context.SaveChanges();
+
+            return categoria;
         }
 
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
+        // -------------
 
+        //buscando o metodo assincrono
         public List<Categoria> ListarTodos()
         {
-            return _context.Categoria
-           .Select(c => new Categoria
-           {
-               CategoriaId = c.CategoriaId,
-               NomeCategoria = c.NomeCategoria,
-           }).ToList();
+            return _context.Categorias.ToList();
+        }
+
+        //buscando o metodo assincrono
+        public async Task<List<Categoria>> ListarTodosAsync()
+        {
+            return await _context.Categorias.ToListAsync();
+        }
+
+        void ICategoriaRepository.Cadastrar(Categoria categoria)
+        {
+            throw new NotImplementedException();
         }
     }
 }
