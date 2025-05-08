@@ -1,12 +1,160 @@
 [
   {
     "ContainingType": "ProjetoLivros.Controllers.CategoriaController",
-    "Method": "ListarProdutos",
+    "Method": "ListarTodos",
     "RelativePath": "api/Categoria",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/Categoria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoria",
+        "Type": "ProjetoLivros.Models.Categoria",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaController",
+    "Method": "ListarPorId",
+    "RelativePath": "api/Categoria/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Categoria/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoriaNova",
+        "Type": "ProjetoLivros.Models.Categoria",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaController",
+    "Method": "Deletar",
+    "RelativePath": "api/Categoria/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaAsyncController",
+    "Method": "ListarTodos",
+    "RelativePath": "api/CategoriaAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaAsyncController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/CategoriaAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoria",
+        "Type": "ProjetoLivros.Models.Categoria",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaAsyncController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/CategoriaAsync/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaAsyncController",
+    "Method": "Atualizar",
+    "RelativePath": "api/CategoriaAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoria",
+        "Type": "ProjetoLivros.Models.Categoria",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjetoLivros.Controllers.CategoriaAsyncController",
+    "Method": "Deletar",
+    "RelativePath": "api/CategoriaAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]
